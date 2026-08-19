@@ -8,13 +8,14 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Build"
+                sh "docker build -t belajar-jenkins . --no-cache"
             }
         }
 
         stage("Test") {
             steps {
                 echo "Test"
-                sh "error"
+                sh "docker inspect belajar-jenkins"
             }
         }
 
