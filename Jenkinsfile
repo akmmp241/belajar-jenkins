@@ -11,16 +11,34 @@ pipeline {
             }
         }
 
-        stages("Test") {
+        stage("Test") {
             steps {
                 echo "Test"
             }
         }
 
-        stages("Deploy") {
+        stage("Deploy") {
             steps {
                 echo "Deploy"
             }
+        }
+    }
+
+    post {
+        always {
+            echo "selalu jalan"
+        }
+
+        success {
+            echo "jalan kalo sukses"
+        }
+
+        failure {
+            echo "jalan kalo gagal"
+        }
+
+        cleanup {
+            echo "selalu jalan juga"
         }
     }
 }
