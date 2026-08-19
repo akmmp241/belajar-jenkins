@@ -1,0 +1,6 @@
+.git
+.claude
+.idea
+Dockerfile
+.dockerignore
+app
